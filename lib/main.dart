@@ -1,17 +1,7 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:tappy_app/custom/text_form_field.dart';
-import 'package:tappy_app/pages/auth/attiva_account.dart';
-import 'package:tappy_app/pages/home.dart';
 import 'package:tappy_app/pages/auth/login.dart';
-import 'package:tappy_app/pages/auth/registra_utente.dart';
 import 'package:provider/provider.dart';
-import 'package:tappy_app/service/active_key_api.dart';
-import 'package:tappy_app/service/login_user_api.dart';
-import 'package:tappy_app/service/logout_user_api.dart';
-import 'package:tappy_app/service/register_email_nickname.dart';
-import 'package:tappy_app/service/register_user_api.dart';
-import 'package:tappy_app/service/request_new_key_api.dart';
+import 'service/providers.dart';
 
 void main() {
   Provider.debugCheckInvalidValueType = null;
