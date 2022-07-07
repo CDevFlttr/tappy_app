@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:tappy_app/pages/auth/login.dart';
 import 'package:provider/provider.dart';
+import 'package:tappy_app/service/api/auth/refresh_token.dart';
+import 'package:tappy_app/service/api/users/change_password.dart';
+import 'package:tappy_app/service/api/users/data_account.dart';
+import 'package:tappy_app/service/api/users/reset_password.dart';
+import 'package:tappy_app/service/api/users/update_data_account.dart';
 import 'service/providers.dart';
 
 void main() {
@@ -9,6 +14,7 @@ void main() {
 }
 
 final messengerKey = GlobalKey<ScaffoldMessengerState>();
+final navigatorKey = GlobalKey<NavigatorState>();
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -19,27 +25,40 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => RegisterUserApi(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => RegisterEmailNicknameApi(),
-        ),
-        ChangeNotifierProvider(
           create: (_) => LoginUserApi(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => LogoutUserApi(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => RefreshToken(),
         ),
         ChangeNotifierProvider(
           create: (_) => ActiveKeyApi(),
         ),
         ChangeNotifierProvider(
+          create: (_) => RegisterUserApi(),
+        ),
+        ChangeNotifierProvider(
           create: (_) => RequestNewKeyApi(),
         ),
         ChangeNotifierProvider(
-          create: (_) => LogoutUserApi(),
+          create: (_) => ChangePassword(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => GetDataAccount(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => ResetPassword(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => UpdateDataAccount(),
         ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         scaffoldMessengerKey: messengerKey,
+        navigatorKey: navigatorKey,
         title: 'Flutter Demo',
         theme: ThemeData(
           // This is the theme of your application.

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tappy_app/pages/auth/register_email_nickname.dart';
 
 import '../../custom/colors.dart';
@@ -26,6 +27,8 @@ class _RegisterUserPageState extends State<RegisterUserPage> {
     });
   }
 
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

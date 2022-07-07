@@ -1,4 +1,4 @@
-const baseUrl = '';
+const baseUrl = 'https://dev-api.tappytag.it/v1';
 
 const typesTappy = baseUrl + '/types';
 const categoriesTappy = baseUrl + '/categories';
@@ -8,7 +8,7 @@ const languages = baseUrl + '/languages';
 const newUsers = baseUrl + '/newUsers';
 const newUsersKeyAct = baseUrl + '/newUsers/keys';// /{actKey}
 const newUsersKeyNew = baseUrl + '/newUsers/keys';// /{userEmail}
-const login = baseUrl + '/login';
+const login= baseUrl + '/login';
 const refreshToken = baseUrl + '/refresh';
 const resetPassword = baseUrl + '/users/passwords';// /{userEmail}
 const passwordChange = baseUrl + '/users/password/change';
